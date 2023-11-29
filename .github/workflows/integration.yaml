@@ -26,7 +26,7 @@ jobs:
           #  * smtp://user:password@server:port
           #  * smtp+starttls://user:password@server:port
           
-          username: ${{oluwolejadesola@gmail.com}}
+          username: ${{secrets.MAIL_USERNAME}}
           # Optional (recommended) mail server password:
           password: ${{secrets.MAIL_PASSWORD}}
           # Required mail subject:
