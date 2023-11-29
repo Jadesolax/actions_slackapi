@@ -42,7 +42,7 @@ jobs:
           # Optional plain body:
           body: Build job of ${{github.repository}} completed successfully!
           
-          name: Post to a slack channel
+        - name: Post to a slack channel
           uses: slackapi/slack-github-action@v1.24.0
           id: slack
           with: 
