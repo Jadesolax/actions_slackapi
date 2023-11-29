@@ -8,12 +8,12 @@ jobs:
     pull_and_run_code:
         runs-on: self-hosted
         steps:
-            - name: "Remove container cyclobold"
-              run: "sudo docker rm -f cyclobold || true"
+            - name: "Remove container actions_slackapi"
+              run: "sudo docker rm -f actions_slackapi || true"
 
             - name: "Get the code from Docker Hub"
-              run: "sudo docker pull theoafactor/cyclobold:latest"
+              run: "sudo docker pull theoafactor/actions_slackapi:latest"
 
             - name: "Run the image as a container"
-              run: "sudo docker run -d -p 80:80 --name cyclobold theoafactor/cyclobold:latest"
+              run: "sudo docker run -d -p 80:80 --name actions_slackapi theoafactor/actions_slackapi:latest"
              
