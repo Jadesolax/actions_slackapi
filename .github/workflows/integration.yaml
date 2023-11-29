@@ -25,6 +25,8 @@ jobs:
           #
           #  * smtp://user:password@server:port
           #  * smtp+starttls://user:password@server:port
+          # Required mail server address if not connection_url:
+          server_address: smtp.gmail.com
           
           username: ${{secrets.MAIL_USERNAME}}
           # Optional (recommended) mail server password:
@@ -32,29 +34,13 @@ jobs:
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
-          to: oluwolejadesola@gmail.com
+          to: ${{secrets.MAIL_USERNAME}}
           # Required sender full name (address can be skipped):
-          from: oluwole # <user@example.com>
+          from: ${{secrets.MAIL_USERNAME}}
           # Optional plain body:
           body: Build job of ${{github.repository}} completed successfully!
           # Optional HTML body read from file:
           html_body: file://README.html
-          # Optional carbon copy recipients:
-          cc: oluwoleolorunfemi@gmail.com
-          # Optional blind carbon copy recipients:
-          # bcc: r2d2@example.com,hansolo@example.com
-          # Optional recipient of the email response:
-          reply_to: oluwolejadesola@gmail.com
-          # Optional Message ID this message is replying to:
-          in_reply_to: <oluwolejadesola@gmail.com>
-          # Optional unsigned/invalid certificates allowance:
-          ignore_cert: true
-          # Optional converting Markdown to HTML (set content_type to text/html too):
-          convert_markdown: true
-          # Optional attachments:
-          attachments: attachments.zip,git.diff,./dist/static/*.js
-          # Optional priority: 'high', 'normal' (default) or 'low'
-          priority: normal
           
 
       - name: "Logs into docker"
