@@ -14,14 +14,6 @@ jobs:
       - name: checks out the repository
         uses: actions/checkout@v4
 
-      # - name: Post to slack channel
-      #   uses: slackapi/slack-github-action@v1.24.0
-      #   id: slack
-      #   with: 
-      #     channel-id: "C068GFQJ0LQ"
-      #     slack-message: "GitHub build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-      #   env:
-      #     SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
@@ -37,7 +29,7 @@ jobs:
           # Required mail server address if not connection_url:
           server_address: smtp.gmail.com
           # Server port, default 25:
-          server_port: 25
+          server_port: 465
           # Optional whether this connection use TLS (default is true if server_port is 465)
           secure: true
           # Optional (recommended) mail server username:
